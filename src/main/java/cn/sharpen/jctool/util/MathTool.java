@@ -349,6 +349,27 @@ public class MathTool {
     public static String strMultiplyDown6(String aa, String bb){
         return strMultiply(aa, bb, 6, ROUND_DOWN);
     }
+
+    /**
+     * 字符串相乘。保留6位小数
+     * @param aa 被乘数
+     * @param bb 减乘
+     * @return 积
+     */
+    public static String strMultiplyUp2(String aa, String bb){
+        return strMultiply(aa, bb, 2, ROUND_UP);
+    }
+
+    /**
+     * 字符串相乘。保留6位小数
+     * @param aa 被乘数
+     * @param bb 减乘
+     * @return 积
+     */
+    public static String strMultiplyUp6(String aa, String bb){
+        return strMultiply(aa, bb, 6, ROUND_UP);
+    }
+
     /**
      * 字符串相乘
      * @param aa 被乘数

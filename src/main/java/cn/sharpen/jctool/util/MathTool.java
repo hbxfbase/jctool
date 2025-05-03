@@ -334,8 +334,14 @@ public class MathTool {
     public static String strMultiplyDown4(String aa, String bb){
         return strMultiply(aa, bb, 4, ROUND_DOWN);
     }
+    public static String strMultiply3Down4(String aa, String bb, String cc){
+        return strMultiply(strMultiply(aa, bb, 4, ROUND_DOWN), cc, 4, ROUND_DOWN);
+    }
     public static String strMultiplyDown2(String aa, String bb){
         return strMultiply(aa, bb, 2, ROUND_DOWN);
+    }
+    public static String strMultiply3Down2(String aa, String bb, String cc){
+        return strMultiply(strMultiply(aa, bb, 2, ROUND_DOWN), cc, 2, ROUND_DOWN);
     }
     public static String strMultiplyDown0(String aa, String bb){
         return strMultiply(aa, bb, 0, ROUND_DOWN);

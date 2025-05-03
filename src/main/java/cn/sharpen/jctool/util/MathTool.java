@@ -19,8 +19,7 @@ import java.util.Set;
 
 import static cn.sharpen.jctool.consts.SignConst.STR_ZERO;
 import static cn.sharpen.jctool.consts.SignConst.ZERO;
-import static java.math.BigDecimal.ROUND_DOWN;
-import static java.math.BigDecimal.ROUND_HALF_UP;
+import static java.math.BigDecimal.*;
 
 /**
  * 数学工具
@@ -98,6 +97,7 @@ public class MathTool {
     public static String halfUpDecimal6(String num) {
         return new BigDecimal(num).setScale(6, ROUND_HALF_UP).stripTrailingZeros().toPlainString();
     }
+
     /**
      * 向下保留小数位
      * @param num 数字
@@ -426,6 +426,26 @@ public class MathTool {
 
     public static String strDivideHalfUp6(String aa, String bb){
         return strDivide(aa, bb, 6, ROUND_HALF_UP);
+    }
+
+    /**
+     * 字符串相除
+     * @param aa 被除数
+     * @param bb 除数
+     * @return 商
+     */
+    public static String strDivideUp2(String aa, String bb){
+        return strDivide(aa, bb, 2, ROUND_UP);
+    }
+
+    /**
+     * 字符串相除
+     * @param aa 被除数
+     * @param bb 除数
+     * @return 商
+     */
+    public static String strDivideUp6(String aa, String bb){
+        return strDivide(aa, bb, 6, ROUND_UP);
     }
 
     /**

@@ -32,6 +32,7 @@ public class JwtTool {
         }
         return null;
     }
+
     /**
      * 获取jwt的payload中的值
      * @param token 会话token
@@ -49,7 +50,7 @@ public class JwtTool {
                 return ObjTool.obj2str(payload.getClaim(key));
             }
         }catch (Exception e){
-            log.info("mistakeToken={}", token);
+            log.info("getStrValFail={}", token);
         }
         return null;
     }

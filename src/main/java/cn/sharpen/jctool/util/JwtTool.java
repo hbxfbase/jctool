@@ -56,7 +56,7 @@ public class JwtTool {
     }
 
     /**
-     * 获取jwt的payload中的clain的map
+     * 获取jwt的payload中的claim的map
      * @param token 会话token
      * @return
      */

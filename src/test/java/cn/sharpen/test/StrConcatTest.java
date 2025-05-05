@@ -37,6 +37,11 @@ public class StrConcatTest {
     }
 
     @Test
+    public void stripTest() {
+        StrTool.plf("stripTest={}", StrUtil.strip(",123,104,,10401,100,", ","));
+    }
+
+    @Test
     public void chuiXiongNan1Test() {
         int i = 1000000, end = 9999999;
         StringBuilder sb = new StringBuilder();

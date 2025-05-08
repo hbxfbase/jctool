@@ -207,6 +207,8 @@ public class SignConst {
     public static final String ID_CARD_MISTAKE = "id_card_mistake";
     public static final String CALL_STATUS_WAIT = "waiting";
     public static final String CALL_STATUS_SUCCESS = "success";
+
+    public static final String STR_PROCESS = "process";
     public static final String STR_SUCCESS = "success";
     public static final String CALL_STATUS_FAIL = "fail";
 

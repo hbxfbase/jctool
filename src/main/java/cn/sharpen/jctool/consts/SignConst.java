@@ -67,6 +67,8 @@ public class SignConst {
     public static final Integer IS_BIND_SUCCESS = 0;
 
     public static final String PRE_0X = "0x";
+    public static final String SUF_SQL_LIKE = ",%";
+
 
     public static final BigDecimal BD_ONE_THOUSAND = new BigDecimal(1 / 1000);
     public static final BigDecimal BD_TWELVE_MILLI = new BigDecimal(12 / 1000000);
@@ -216,6 +218,10 @@ public class SignConst {
     public static final String STR_ZH_DEL = "删除";
     public static final String STR_ZH_UPDATE = "修改";
 
+
+    public static final String STATUS_UNTREATED= "untreated";
+    public static final String STATUS_ACTIVE= "active";
+    public static final String STATUS_INACTIVE= "inactive";
 
     // 跟踪序号
     public static final String TRACE_NO = "traceNo";

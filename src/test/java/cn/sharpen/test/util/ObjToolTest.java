@@ -77,7 +77,7 @@ public class ObjToolTest {
     }
     @Test
     public void replaceCheckTest(){
-        String str = "{\"token\":\"51759655-6d5bfcbae9485575bada9f994ccc66b0\",\"receiver_email\":\"lijunwyf@hotmail.com\",\"order_code\":\"VA1000000752295\",\"total_amount\":50000,\"bank_code\":\"BIDV\",\"order_description\":\"KL-140823-17:28:01 768252\",\"tax_amount\":null,\"discount_amount\":null,\"fee_shipping\":null,\"return_url\":\"\",\"cancel_url\":\"\",\"buyer_fullname\":\"along\",\"buyer_email\":\"\",\"buyer_mobile\":\"\",\"buyer_address\":\"N/A\",\"affiliate_code\":\"\",\"transaction_id\":98037264,\"payment_type\":1,\"transaction_status\":4}";
+        String str = "{\"token\":\"51759655-6d5bfcbae9485575bada9f994ccc66b0\",\"receiver_email\":\"abc-123@hotmail.com\",\"order_code\":\"VA1000000752295\",\"total_amount\":50000,\"bank_code\":\"BIDV\",\"order_description\":\"KL-140823-17:28:01 768252\",\"tax_amount\":null,\"discount_amount\":null,\"fee_shipping\":null,\"return_url\":\"\",\"cancel_url\":\"\",\"buyer_fullname\":\"along\",\"buyer_email\":\"\",\"buyer_mobile\":\"\",\"buyer_address\":\"N/A\",\"affiliate_code\":\"\",\"transaction_id\":98037264,\"payment_type\":1,\"transaction_status\":4}";
         try {
             StrTool.pl2("replaceCheckTest"+str.replaceAll("\\/", "\\\\/"));
         }catch (Exception e){

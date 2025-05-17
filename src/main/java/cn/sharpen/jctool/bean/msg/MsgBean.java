@@ -196,6 +196,13 @@ public class MsgBean<T> implements Serializable {
         return new MsgBean(msgBody);
     }
 
+    public static <T> MsgBean<T> instEntityWithCode(String code,String msg,T t) {
+        MsgHead msgHead = new MsgHead(code, msg, null);
+        MsgBody msgBody = new MsgBody();
+        msgBody.setEntity(t);
+        return new MsgBean(msgHead, msgBody);
+    }
+
     public static <T> MsgBean<T> instEntityAndReqCount(T t, int count) {
         MsgBody msgBody = new MsgBody();
         msgBody.setEntity(t);

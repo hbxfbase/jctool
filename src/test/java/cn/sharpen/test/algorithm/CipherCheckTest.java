@@ -29,7 +29,7 @@ public class CipherCheckTest {
     public void googleCodeGenerate(){
         String secret = GoogleAuthenticator.generateSecretKey();
         FileUtil.writeUtf8String(secret, tempFile);
-        String url = GoogleAuthenticator.getQRBarcodeURL("justin","51kxd.com", secret);
+        String url = GoogleAuthenticator.getOtpauthURL("polygon","jimmy","polygon.com", secret);
         StrTool.plf("googleCodeGenerateUrl={} secret={}", url, secret);
     }
 
@@ -39,8 +39,8 @@ public class CipherCheckTest {
     @Test
     public void googleCodeScan(){
         String secret = FileUtil.readUtf8String(tempFile);
-        String host = "pluplu.cn";
-        String result = GoogleAuthenticator.getURL("plupay:","justin", host, secret);
+        String host = "polygon.com";
+        String result = GoogleAuthenticator.getURL("polygon:","jimmy", host, secret);
         StrTool.plf("googleCodeScan={} secret={}", result, secret);
     }
 
@@ -51,7 +51,7 @@ public class CipherCheckTest {
     public void verifyGoogleCode(){
         String secret = FileUtil.readUtf8String(tempFile);
         // 778934
-        String code = "575268";
+        String code = "564332";
         Boolean result = GoogleAuthenticator.authCode(2, code, secret);
         StrTool.plf("verifyGoogleCode={} result={} secret={}", code, result.toString(), secret);
     }

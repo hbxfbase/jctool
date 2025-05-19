@@ -76,6 +76,12 @@ public class GoogleAuthenticator {
         return String.format(format, pre, user, host, secret);
     }
 
+    // Jimmy 更新,google扫描的串
+    public static String getOtpauthURL(String pre, String user, String host, String secret) {
+        String format = "otpauth://totp/%s:%s@%s?secret=%s&issuer=%s";
+        return String.format(format, pre, user, host, secret,pre);
+    }
+
     public boolean check_code(String secret, long code, long timeMsec) {
         Base32 codec = new Base32();
         byte[] decodedKey = codec.decode(secret);

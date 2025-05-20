@@ -72,6 +72,7 @@ public enum BizCodeEnum {
   BIZ_DATA_OVER("3000028", "请求的数据已超量"),
   BIZ_VERIFYCODE_OVERDUE("3000031", "验证码已过期"),
   BIZ_VERIFYCODE_MISMATCH("3000032", "验证码不匹配"),
+  BIZ_2FA_VERIFYCODE_MISMATCH("3000132", "安全器验证码不匹配"),
 
   BIZ_PHONE_VERIFYCODE_OVERDUE("3000033", "手机短信验证码已过期"),
   BIZ_PHONE_VERIFYCODE_MISMATCH("3000034", "手机短信验证码不匹配"),

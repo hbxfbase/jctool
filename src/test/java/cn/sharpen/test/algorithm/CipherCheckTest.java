@@ -29,7 +29,7 @@ public class CipherCheckTest {
     public void googleCodeGenerate(){
         String secret = GoogleAuthenticator.generateSecretKey();
         FileUtil.writeUtf8String(secret, tempFile);
-        String url = GoogleAuthenticator.getOtpauthURL("polygon","jimmy","polygon.com", secret);
+        String url = GoogleAuthenticator.getOtpauthURL("jimmy","polygon.com", secret);
         StrTool.plf("googleCodeGenerateUrl={} secret={}", url, secret);
     }
 

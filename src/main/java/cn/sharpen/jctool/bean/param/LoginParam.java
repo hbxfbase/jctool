@@ -68,6 +68,11 @@ public class LoginParam {
   private String verifyCode = null;
 
   /**
+   * 登录附加验证码类型,比如动态验证码,邮箱验证码(密码登录也要的验证码)
+   */
+  private String verifyCodeType = null;
+
+  /**
    * 新邮箱验证码 (一般用于修改新邮箱场景)
    */
   private String newVerifyCode = null;

@@ -50,6 +50,11 @@ public class LoginParam {
   private String type = null;
 
   /**
+   * 发送哪个?，分邮箱，手机号，账户 email,cellphone
+   */
+  private String sendType = null;
+
+  /**
    * 登录账户
    */
   private String account = null;

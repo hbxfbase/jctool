@@ -8,16 +8,19 @@ import cn.hutool.core.io.file.FileReader;
 import cn.hutool.core.io.file.FileWriter;
 import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.extra.qrcode.QrCodeUtil;
 import cn.sharpen.jctool.bean.utilbean.ExtMap;
 import cn.sharpen.jctool.consts.SignConst;
 import cn.sharpen.jctool.util.JsonTool;
 import cn.sharpen.jctool.util.StrConcat;
 import cn.sharpen.jctool.util.StrTool;
 import com.fasterxml.jackson.databind.JsonNode;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -25,6 +28,7 @@ import java.util.*;
 /**
  * JWT相关的测试
  */
+@Slf4j
 public class StrConcatTest {
 
     @Test
@@ -209,5 +213,20 @@ public class StrConcatTest {
         List<JsonNode> list = JsonTool.getNodeList(JsonTool.json2node(json),"data", "list");
         StrTool.plf("getNodeListTestStr=\n\n{}\n\n", JsonTool.obj2json(list));
     }
+
+    @Test
+    public void parseQrTest(){
+        // 00020101021138620010A000000727013200069704260118NLP6884099234567890208QRIBFTTA53037045802VN6304EC6A
+        String path = "E:\\datum\\data\\media\\image\\示例\\qr-test.png";
+        try {
+            File file = new File(path);
+            String qrContent = QrCodeUtil.decode(file);
+            StrTool.plf("parseQrTestTestStr=\n\n{}\n\n", qrContent);
+        }catch (Exception e) {
+            log.info("parseQrTestFail {}", e.getMessage(), e);
+        }
+    }
+
+
 
 }

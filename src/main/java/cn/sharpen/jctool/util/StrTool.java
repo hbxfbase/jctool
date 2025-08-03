@@ -167,6 +167,9 @@ public class StrTool {
     public static String fnt(){
         return DateUtil.format(new Date(), DatePattern.PURE_DATETIME_FORMAT);
     }
+    public static Date timeDef(String dateStr){
+        return DateUtil.parseDateTime(dateStr);
+    }
     /**
      * 当前时间的打印格式的字符串
      * @return 文件名中的时间格式字符串，yyyy-MM-dd HH:mm:ss

@@ -17,8 +17,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import static cn.sharpen.jctool.consts.SignConst.STR_ZERO;
-import static cn.sharpen.jctool.consts.SignConst.ZERO;
+import static cn.sharpen.jctool.consts.SignConst.*;
 import static java.math.BigDecimal.*;
 
 /**
@@ -95,6 +94,9 @@ public class MathTool {
      * @return
      */
     public static String halfUpDecimal6(String num) {
+        if(StringUtils.isBlank(num)) {
+            num = STR_ZERO;
+        }
         return new BigDecimal(num).setScale(6, ROUND_HALF_UP).stripTrailingZeros().toPlainString();
     }
 
@@ -104,6 +106,9 @@ public class MathTool {
      * @return 向下保留小数位后的数字的字符串形式
      */
     public static String downDecimal6(String num) {
+        if(StringUtils.isBlank(num)) {
+            num = STR_ZERO;
+        }
         return new BigDecimal(num).setScale(6, ROUND_DOWN).stripTrailingZeros().toPlainString();
     }
     /**
@@ -112,6 +117,9 @@ public class MathTool {
      * @return 向下保留小数位的字符串形式
      */
     public static String downDecimal(String num, int decimal) {
+        if(StringUtils.isBlank(num)) {
+            num = STR_ZERO;
+        }
         return new BigDecimal(num).setScale(decimal, ROUND_DOWN).stripTrailingZeros().toPlainString();
     }
 
@@ -226,6 +234,9 @@ public class MathTool {
         if(StringUtils.isBlank(aa)) {
             aa = STR_ZERO;
         }
+        if(StringUtils.isBlank(bb)) {
+            bb = STR_ZERO;
+        }
         BigDecimal bd = new BigDecimal(aa).add(new BigDecimal(bb));
         if(roundingMode!=null) {
             bd = bd.setScale(scale, roundingMode);
@@ -317,6 +328,7 @@ public class MathTool {
         if(StringUtils.isBlank(aa)) {
             aa = STR_ZERO;
         }
+        bb = StrTool.valNoBlank(bb, STR_ZERO);
         BigDecimal bd = new BigDecimal(aa).subtract(new BigDecimal(bb));
         if(roundingMode!=null) {
             bd = bd.setScale(scale, roundingMode);
@@ -396,6 +408,7 @@ public class MathTool {
         if(StringUtils.isBlank(aa)) {
             aa = STR_ZERO;
         }
+        bb = StrTool.valNoBlank(bb, STR_ZERO);
         BigDecimal bd = new BigDecimal(aa).multiply(new BigDecimal(bb));
         if(roundingMode!=null) {
             bd = bd.setScale(scale, roundingMode);
@@ -495,6 +508,7 @@ public class MathTool {
         if(StringUtils.isBlank(aa)) {
             return STR_ZERO;
         }
+        bb = StrTool.valNoBlank(bb, STR_ONE);
         roundingMode = roundingMode == null ? BigDecimal.ROUND_DOWN : roundingMode;
         BigDecimal bd = new BigDecimal(aa).divide(new BigDecimal(bb), scale, roundingMode);
         return bd.stripTrailingZeros().toPlainString();
@@ -587,7 +601,7 @@ public class MathTool {
         return new BigDecimal(aa).compareTo(new BigDecimal(bb))>0;
     }
     public static boolean greater0(String aa){
-        return new BigDecimal(aa).compareTo(new BigDecimal(ZERO))>0;
+        return new BigDecimal(aa).compareTo(new BigDecimal(STR_ZERO))>0;
     }
     /**
      * 数字上是否大于等于
@@ -599,6 +613,7 @@ public class MathTool {
         if(StringUtils.isBlank(aa)) {
             return false;
         }
+        bb = StrTool.valNoBlank(bb, STR_ONE);
         return new BigDecimal(aa).compareTo(new BigDecimal(bb))>=0;
     }
     /**
@@ -622,6 +637,7 @@ public class MathTool {
         if(StringUtils.isBlank(bb)) {
             return true;
         }
+        bb = StrTool.valNoBlank(bb, STR_ONE);
         return new BigDecimal(aa).compareTo(new BigDecimal(bb))<0;
     }
 
@@ -635,6 +651,8 @@ public class MathTool {
      * @return 是否小于等于
      */
     public static boolean lessEqual(String aa, String bb){
+        aa = StrTool.valNoBlank(aa, STR_ONE);
+        bb = StrTool.valNoBlank(bb, STR_ONE);
         return new BigDecimal(aa).compareTo(new BigDecimal(bb))<=0;
     }
     /**
@@ -643,7 +661,8 @@ public class MathTool {
      * @return 是否小于等于
      */
     public static boolean lessEqual0(String aa){
-        return new BigDecimal(aa).compareTo(new BigDecimal(ZERO))<=0;
+        aa = StrTool.valNoBlank(aa, STR_ONE);
+        return new BigDecimal(aa).compareTo(new BigDecimal(STR_ZERO))<=0;
     }
 
     /**
@@ -705,12 +724,20 @@ public class MathTool {
         }
     }
 
+    /**
+     * 判断字符串转数字后的最大值。如果非数字，就忽略
+     * @param nums 要判断的数字的数组
+     * @return
+     */
     public static String maxMany(String ...nums){
         String maxVal = null;
         if(ArrayUtils.isEmpty(nums)) {
             return maxVal;
         }
         for(String num : nums) {
+            if(!NumberUtil.isNumber(num)) {
+                continue;
+            }
             maxVal = max(maxVal, num);
         }
         return maxVal;

@@ -535,12 +535,31 @@ public class MathTool {
         return result;
     }
 
+    /**
+     * 去掉小数末尾多余的0
+     * @param numStr
+     * @return
+     */
+    public static String decimalNo0(String numStr){
+        if(StringUtils.isBlank(numStr)) {
+            return STR_ZERO;
+        }
+        return new BigDecimal(numStr).stripTrailingZeros().toPlainString();
+    }
+
+    /**
+     * 保留小数位
+     * @param numStr
+     * @param qty
+     * @return
+     */
     public static String decimalDown(String numStr, int qty){
         if(StringUtils.isBlank(numStr)) {
             return STR_ZERO;
         }
         return new BigDecimal(numStr).setScale(qty, RoundingMode.DOWN).stripTrailingZeros().toPlainString();
     }
+
     public static final DecimalFormat df = new DecimalFormat("#0.00000000");
 
     /**

@@ -21,7 +21,7 @@ import java.util.Map;
 public class LoginInfo {
 
     /**
-     * 登录后token
+     * data
      */
     private String token;
 

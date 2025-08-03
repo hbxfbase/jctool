@@ -77,6 +77,7 @@ public class LoginConst {
     public static final String USER_GRADE_ADMIN = "admin";
     public static final String USER_GRADE_MANAGER = "manager";
     public static final String USER_GRADE_MEMBER = "member";
+    public static final String USER_GRADE_CONSUMER = "consumer";
 
     // 用户状态
 

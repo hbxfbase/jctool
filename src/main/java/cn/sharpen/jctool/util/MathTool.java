@@ -632,7 +632,7 @@ public class MathTool {
         if(StringUtils.isBlank(aa)) {
             return false;
         }
-        bb = StrTool.valNoBlank(bb, STR_ONE);
+        bb = StrTool.valNoBlank(bb, STR_ZERO);
         return new BigDecimal(aa).compareTo(new BigDecimal(bb))>=0;
     }
     /**
@@ -656,7 +656,7 @@ public class MathTool {
         if(StringUtils.isBlank(bb)) {
             return true;
         }
-        bb = StrTool.valNoBlank(bb, STR_ONE);
+        bb = StrTool.valNoBlank(bb, STR_ZERO);
         return new BigDecimal(aa).compareTo(new BigDecimal(bb))<0;
     }
 
@@ -670,8 +670,8 @@ public class MathTool {
      * @return 是否小于等于
      */
     public static boolean lessEqual(String aa, String bb){
-        aa = StrTool.valNoBlank(aa, STR_ONE);
-        bb = StrTool.valNoBlank(bb, STR_ONE);
+        aa = StrTool.valNoBlank(aa, STR_ZERO);
+        bb = StrTool.valNoBlank(bb, STR_ZERO);
         return new BigDecimal(aa).compareTo(new BigDecimal(bb))<=0;
     }
     /**
@@ -680,7 +680,7 @@ public class MathTool {
      * @return 是否小于等于
      */
     public static boolean lessEqual0(String aa){
-        aa = StrTool.valNoBlank(aa, STR_ONE);
+        aa = StrTool.valNoBlank(aa, STR_ZERO);
         return new BigDecimal(aa).compareTo(new BigDecimal(STR_ZERO))<=0;
     }
 

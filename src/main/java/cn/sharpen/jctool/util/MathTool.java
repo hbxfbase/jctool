@@ -61,6 +61,18 @@ public class MathTool {
     }
 
     /**
+     * 字符串数据转成int, 小数全部去掉
+     * @param numStr
+     * @return
+     */
+    public static String num2IntDown(String numStr) {
+        if(StringUtils.isBlank(numStr)) {
+            return STR_ZERO;
+        }
+        return new BigDecimal(numStr).intValue()+"";
+    }
+
+    /**
      * 乘于100万并转成整数
      * @param num 数字
      * @return 乘于100万后的数字

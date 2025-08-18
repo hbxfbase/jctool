@@ -671,6 +671,9 @@ public class StrTool {
     public static String getTraceNo() {
         return MDC.get(TRACE_NO);
     }
+    public static void setTraceNo(String traceNo) {
+        MDC.put(TRACE_NO, traceNo);
+    }
     // 时间相关，参考老项目的StringUtil
     public static final DecimalFormat df = new DecimalFormat("#0.00000000");
 

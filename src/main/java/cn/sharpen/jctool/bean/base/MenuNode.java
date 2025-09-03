@@ -29,7 +29,7 @@ public class MenuNode {
     /** 图标-目前只支持element-ui */
     private String icon;
     /** 菜单顺序 */
-    private String ordinal;
+    private Integer ordinal;
 
 
     private List<MenuNode> children;

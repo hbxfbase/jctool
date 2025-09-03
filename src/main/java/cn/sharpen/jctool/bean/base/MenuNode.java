@@ -28,6 +28,8 @@ public class MenuNode {
     private String refreshPage;
     /** 图标-目前只支持element-ui */
     private String icon;
+    /** 菜单顺序 */
+    private String ordinal;
 
 
     private List<MenuNode> children;

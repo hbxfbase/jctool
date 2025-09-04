@@ -242,6 +242,8 @@ public class SignConst {
     public static final String DBT_BIGINT = "bigint";
     public static final String DBT_VARCHAR = "varchar";
     public static final String DBT_VARCHAR2 = "varchar2";
+    public static final String DBT_TEXT = "text";
+    public static final String DBT_MEDIUMTEXT = "mediumtext";
     public static final String DBT_JSON = "json";
     public static final String CREATE_TIME = "createTime";
     public static final String ENABLE_FLAG = "enableFlag";

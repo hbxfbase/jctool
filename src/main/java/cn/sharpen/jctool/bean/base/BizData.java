@@ -74,9 +74,10 @@ public class BizData {
 
   public static final String DB_GO_TYPE_MAP = "VARCHAR:string;VARCHAR2:string;varchar:string;varchar2:string;" +
           "json:string;longtext:string;text:string;mediumtext:string;mediumtext:string;text:string;" +
+          "nchar:string;"+
           "timestamp:sql.NullTime;datetime:sql.NullTime;" +
           "tinyint:int32;smallint:int32;mediumint:int32;int:int32;integer:int32;bigint:int64;" +
-          "decimal:decimal.Decimal;";
+          "decimal:decimal.Decimal;double:decimal.Decimal;";
   public static Map<String, String> dbGoTypeMap = StrTool.str2map(DB_GO_TYPE_MAP, SymbolConst.SEMICOLON, COLON);
 
   public static Set<String> dbDateTypes = new HashSet(Arrays.asList(new String[]{"timestamp", "datetime"}));

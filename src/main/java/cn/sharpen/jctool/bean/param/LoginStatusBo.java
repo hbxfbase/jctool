@@ -33,6 +33,10 @@ public class LoginStatusBo {
    */
   private String tid = null;
   /**
+   * 页面登录token
+   */
+  private String pageToken = null;
+  /**
    * 登录终端类型。例：快递公司express_company，快递员courier
    */
   private String terminalType = null;

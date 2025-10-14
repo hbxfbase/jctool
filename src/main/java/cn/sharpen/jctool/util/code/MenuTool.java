@@ -37,25 +37,30 @@ public class MenuTool {
             COMMA, COLON);
 
 
+    public static List<String> createDefMenuSql(Long projId)  {
+        // 系统操作ID前缀，例：20305102， 业务管理ID前缀，例： 20305103
+        String sysPre = projId+ "02", bizPre = projId+ "03";
+        //系统全局ID
+        long sysGlobalId = ObjTool.str2long(sysPre+"02"),
+                //混合查询ID
+                hybridId = ObjTool.str2long(sysPre+"03"),
+                //业务数据管理ID
+                bizManageId = ObjTool.str2long(bizPre+"01");
+        return createDefMenuSql(projId, sysPre, bizPre, sysGlobalId, hybridId, bizManageId);
+    }
+
     /**
      * 生成默认菜单
      * 包括：
      * @param projId 项目ID
      */
-    public static List<String> createDefMenuSql(Long projId)  {
+    public static List<String> createDefMenuSql(Long projId, String sysPre, String bizPre, long sysGlobalId,
+                                                long hybridId, long bizManageId)  {
         List<String> authList = new ArrayList<>();
-        // 系统操作ID前缀，例：20305102， 业务管理ID前缀，例： 20305103
-        String sysPre = projId+ "02", bizPre = projId+ "03";
         //系统操作ID
         Long sysOperaId = ObjTool.str2long(sysPre),
-                //系统全局ID
-                sysGlobalId = ObjTool.str2long(sysPre+"02"),
-                //混合查询ID
-                hybridId = ObjTool.str2long(sysPre+"03"),
                 //业务管理ID
-                bizId = ObjTool.str2long(bizPre),
-                //业务数据管理ID
-                bizManageId = ObjTool.str2long(bizPre+"01");
+                bizId = ObjTool.str2long(bizPre);
         // 菜单包含 系统操作，系统全局， 混合查询，业务管理， 业务数据管理
 
         long np = 0L;

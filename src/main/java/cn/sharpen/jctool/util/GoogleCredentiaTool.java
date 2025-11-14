@@ -17,7 +17,7 @@ import java.util.Collections;
  * 用于解析Google登录返回的JWT格式credential
  */
 @Slf4j
-public class GoogleCredentialUtil {
+public class GoogleCredentiaTool {
 
     private static final NetHttpTransport transport = new NetHttpTransport();
     private static final GsonFactory gsonFactory = GsonFactory.getDefaultInstance();

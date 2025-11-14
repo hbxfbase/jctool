@@ -30,7 +30,7 @@ public class GoogleCredentialUtil {
      * @throws GeneralSecurityException 安全相关异常（如签名验证失败）
      * @throws IOException 网络异常（如获取谷歌公钥失败）
      */
-    public GoogleUserInfoVo verifyAndParse(String credential, String clientId) throws GeneralSecurityException, IOException {
+    public GoogleUserInfoVo verifyAndParse(String credential, String clientId) {
         // 创建验证器
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, gsonFactory)
                 // 验证受众（必须是你的 client-id）
@@ -40,9 +40,14 @@ public class GoogleCredentialUtil {
                 .build();
 
         // 验证 JWT 并获取解析结果
-        GoogleIdToken idToken = verifier.verify(credential);
+        GoogleIdToken idToken = null;
+        try {
+            idToken = verifier.verify(credential);
+        } catch (Exception e) {
+            return null;
+        }
         if (idToken == null) {
-            throw new IllegalArgumentException("谷歌 JWT 验证失败（无效的 token）");
+            return null;
         }
         
         // 将 GoogleIdToken.Payload 转换为 GoogleUserInfoVo

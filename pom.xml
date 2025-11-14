@@ -82,6 +82,19 @@
             <version>1.71</version>
         </dependency>
 
+        <!-- 核心依赖：谷歌 OAuth 验证库 -->
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>1.35.2</version> <!-- 推荐使用 1.35.x 及以上版本 -->
+        </dependency>
+        <!-- 补充 OAuth2 相关工具类（包含 GoogleIdTokenVerifier） -->
+        <dependency>
+            <groupId>com.google.auth</groupId>
+            <artifactId>google-auth-library-oauth2-http</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+
         <dependency>
             <artifactId>commons-collections4</artifactId>
             <groupId>org.apache.commons</groupId>

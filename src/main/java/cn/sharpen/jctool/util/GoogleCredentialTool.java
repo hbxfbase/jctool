@@ -27,8 +27,6 @@ public class GoogleCredentialTool {
      * @param credential 前端传递的 JWT 字符串
      * @param clientId 客户端ID
      * @return 解析后的用户信息
-     * @throws GeneralSecurityException 安全相关异常（如签名验证失败）
-     * @throws IOException 网络异常（如获取谷歌公钥失败）
      */
     public static GoogleUserInfoVo verifyAndParse(String credential, String clientId) {
         // 创建验证器

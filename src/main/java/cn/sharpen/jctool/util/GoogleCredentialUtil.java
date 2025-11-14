@@ -19,8 +19,8 @@ import java.util.Collections;
 @Slf4j
 public class GoogleCredentialUtil {
 
-    private final NetHttpTransport transport = new NetHttpTransport();
-    private final GsonFactory gsonFactory = GsonFactory.getDefaultInstance();
+    private static final NetHttpTransport transport = new NetHttpTransport();
+    private static final GsonFactory gsonFactory = GsonFactory.getDefaultInstance();
 
     /**
      * 验证并解析谷歌返回的 credential（JWT）
@@ -30,7 +30,7 @@ public class GoogleCredentialUtil {
      * @throws GeneralSecurityException 安全相关异常（如签名验证失败）
      * @throws IOException 网络异常（如获取谷歌公钥失败）
      */
-    public GoogleUserInfoVo verifyAndParse(String credential, String clientId) {
+    public static GoogleUserInfoVo verifyAndParse(String credential, String clientId) {
         // 创建验证器
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, gsonFactory)
                 // 验证受众（必须是你的 client-id）

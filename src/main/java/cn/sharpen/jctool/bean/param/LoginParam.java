@@ -103,6 +103,10 @@ public class LoginParam {
    */
   private String expireSecond = null;
 
+  /**
+   * google登录credential
+   */
+  private String credential = null;
 
   /**
    * 扩展参数

@@ -4,6 +4,7 @@ import cn.sharpen.jctool.consts.SignConst;
 import cn.sharpen.jctool.enums.BizCodeEnum;
 import cn.sharpen.jctool.util.JsonTool;
 import cn.sharpen.jctool.util.ObjTool;
+import cn.sharpen.jctool.util.StrTool;
 import lombok.AllArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import lombok.Data;
@@ -12,6 +13,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
+
+import static cn.sharpen.jctool.consts.SignConst.Y;
 
 
 /**
@@ -262,6 +266,37 @@ public class MsgBean<T> implements Serializable {
     public static <T> String requestId(MsgBean msgBean) {
         return msgBean == null || msgBean.getMsgHead() == null ? null : msgBean.getMsgHead().getRequestId();
     }
+
+
+    // 从MsgBean中获取asNext
+    public static boolean getAsNext(MsgBean msgBean) {
+        if(msgBean == null || msgBean.getMsgBody()== null) {
+            return false;
+        }
+        String asNextStr = msgBean.getMsgBody().getAsNext();
+        asNextStr = StrTool.valNoBlank(asNextStr, Y);
+        return StrTool.asy(asNextStr);
+    }
+
+    // 从MsgBean中获取lastID
+    public static Long getLastId(MsgBean msgBean) {
+        if(msgBean == null || msgBean.getMsgBody()== null) {
+            return null;
+        }
+        String lastId = msgBean.getMsgBody().getLastId();
+        return StringUtils.isBlank(lastId) ? null : ObjTool.str2long(lastId);
+    }
+
+    // 从MsgBean中获取lastID
+    public static Map<String, Object> getBodyExtMap(MsgBean msgBean) {
+        if(msgBean == null || msgBean.getMsgBody()== null) {
+            return null;
+        }
+        Map<String, Object> extMap = msgBean.getMsgBody().getExtMap();
+        return extMap;
+    }
+
+    /// ///////////////////////
 
     // 实例化
     public static MsgBean instIdMsg(String identify, String msgStr) {

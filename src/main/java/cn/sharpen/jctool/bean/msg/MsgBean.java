@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -268,7 +269,7 @@ public class MsgBean<T> implements Serializable {
     }
 
 
-    // 从MsgBean中获取asNext
+    // 从MsgBean中获取asNext。
     public static boolean getAsNext(MsgBean msgBean) {
         if(msgBean == null || msgBean.getMsgBody()== null) {
             return false;
@@ -278,7 +279,7 @@ public class MsgBean<T> implements Serializable {
         return StrTool.asy(asNextStr);
     }
 
-    // 从MsgBean中获取lastID
+    // 从MsgBean中获取lastID。
     public static Long getLastId(MsgBean msgBean) {
         if(msgBean == null || msgBean.getMsgBody()== null) {
             return null;
@@ -287,13 +288,22 @@ public class MsgBean<T> implements Serializable {
         return StringUtils.isBlank(lastId) ? null : ObjTool.str2long(lastId);
     }
 
-    // 从MsgBean中获取lastID
+    // 从MsgBean中获取ExtMap对象。
     public static Map<String, Object> getBodyExtMap(MsgBean msgBean) {
         if(msgBean == null || msgBean.getMsgBody()== null) {
             return null;
         }
         Map<String, Object> extMap = msgBean.getMsgBody().getExtMap();
         return extMap;
+    }
+
+
+    // 从MsgBean中获取ExtMap对象。
+    public static Map<String, Object> getBodyExtMapNoNull(MsgBean msgBean) {
+        if(msgBean == null || msgBean.getMsgBody()== null || msgBean.getMsgBody().getExtMap() == null) {
+            return new HashMap<String, Object>();
+        }
+        return msgBean.getMsgBody().getExtMap();
     }
 
     /// ///////////////////////

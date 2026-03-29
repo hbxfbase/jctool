@@ -133,6 +133,8 @@ public class SignConst {
     public static final String ORDERBY_VIEW_ASC = "ascending";
     public static final String ORDERBY_DESC = "desc";
     public static final String ORDERBY_VIEW_DESC = "desc";
+    public static final String ST="startTime";
+    public static final String ET="endTime";
 
     public static final String LOGIN_TOKEN_ERROR_PED_PREFIX = "TOKEN_ERROR_PWD_";
 
@@ -209,6 +211,7 @@ public class SignConst {
     public static final String CALL_STATUS_SUCCESS = "success";
 
     public static final String STR_PROCESS = "process";
+    public static final String STR_WAIT = "wait";
     public static final String STR_SUCCESS = "success";
     public static final String CALL_STATUS_FAIL = "fail";
 

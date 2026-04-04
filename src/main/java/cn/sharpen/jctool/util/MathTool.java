@@ -617,11 +617,25 @@ public class MathTool {
      */
     @Deprecated
     public static boolean eqaul(String aa, String bb){
+        if (aa == null) {
+            aa = STR_ZERO;
+        }
+        if (bb == null) {
+            bb = STR_ZERO;
+        }
         return new BigDecimal(aa).compareTo(new BigDecimal(bb)) == 0;
     }
+
     public static boolean equal(String aa, String bb){
+        if (aa == null) {
+            aa = STR_ZERO;
+        }
+        if (bb == null) {
+            bb = STR_ZERO;
+        }
         return new BigDecimal(aa).compareTo(new BigDecimal(bb)) == 0;
     }
+
     /**
      * 数字上是否大于
      * @param aa 比较数字
@@ -629,9 +643,18 @@ public class MathTool {
      * @return 是否大于
      */
     public static boolean greater(String aa, String bb){
+        if (aa == null) {
+            aa = STR_ZERO;
+        }
+        if (bb == null) {
+            bb = STR_ZERO;
+        }
         return new BigDecimal(aa).compareTo(new BigDecimal(bb))>0;
     }
     public static boolean greater0(String aa){
+        if (aa == null) {
+            aa = STR_ZERO;
+        }
         return new BigDecimal(aa).compareTo(new BigDecimal(STR_ZERO))>0;
     }
     /**

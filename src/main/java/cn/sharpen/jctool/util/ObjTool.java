@@ -891,15 +891,25 @@ public class ObjTool {
     }
 
     // 获取常用对象
+
+    // 获取今天天的init值，例： 20260415
     public static Integer todayInt(){
         return Integer.valueOf(DatePattern.PURE_DATE_FORMAT.format(System.currentTimeMillis()));
     }
+
+    // 获取昨天的init值，例： 20260415
+    public static Integer yesterdayInt(){
+        return Integer.valueOf(DatePattern.PURE_DATE_FORMAT.format(System.currentTimeMillis() - (86400*1000)));
+    }
+
     public static Date parseRippleTime(Long time){
         if(time == null){
             return null;
         }
         return new Date((time+ SignConst.RIPPLE_BASE_SECOND)*1000);
     }
+
+
     public static String rippleTimeStr(Long time){
         return DateUtil.formatDateTime(parseRippleTime(time));
     }

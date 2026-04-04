@@ -30,7 +30,8 @@ public class WebConst {
     public static final String ORIGIN = "origin";
     public static final String HTTP_METHODS = "POST, GET, OPTIONS, PUT, DELETE";
     public static final String HTTP_HEADS = "Content-Type, Access-Control-Allow-Headers, language, Authorization, " +
-            "X-Requested-With, otToken, requestId, otLanguage,otSource,otEquipId,X-Proj-Id, token,projid,proj_id,proj-id, Content-Disposition, req_language, from_terminal, appName,appVersion,appPlatform,ua";
+            "X-Requested-With, otToken, requestId, otLanguage,otSource,otEquipId,X-Proj-Id, token,projid," +
+            "proj_id,proj-id, Content-Disposition, req_language, from_terminal, appName,appVersion,appPlatform,ua";
     public static final String HTTP_EXPOSE_HEADS = "Content-Disposition";
     public static final String CORS_EXPOSE_HEADERS = "Access-Control-Expose-Headers";
 

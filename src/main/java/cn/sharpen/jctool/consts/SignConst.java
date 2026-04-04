@@ -274,6 +274,7 @@ public class SignConst {
     public static String ALIYUN_SIGN_NAME = "aliyun_sign_name";
 
 
+    public static final String REQUEST_ID = "requestId";
     public static final String CLASSIFY_USERTYPE = "userType";
     @Deprecated
     public static final String USERTYPE_ADMIN = "admin";

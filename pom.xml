@@ -82,6 +82,14 @@
             <version>1.71</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <!-- ribbon foil name item combine hockey refuse ladder unlock dry gasp spread
+            0xd6C1A1D4326435576d8617aF4aA6F9Ef18C55cc2 只有4.8.4才跟TP助记词生成钱包是一致的 -->
+            <version>4.8.4</version>
+        </dependency>
+
         <!-- 核心依赖：谷歌 OAuth 验证库 -->
         <dependency>
             <groupId>com.google.api-client</groupId>

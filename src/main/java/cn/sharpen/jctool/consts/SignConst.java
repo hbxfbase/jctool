@@ -213,6 +213,8 @@ public class SignConst {
     public static final String STR_PROCESS = "process";
     public static final String STR_WAIT = "wait";
     public static final String STR_SUCCESS = "success";
+    public static final String STR_FINISH = "finish";
+    public static final String STR_FINISHED = "finished";
     public static final String CALL_STATUS_FAIL = "fail";
 
     public static final String STR_ZH_SUCCESS = "成功";

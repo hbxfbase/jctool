@@ -94,7 +94,7 @@ public class MathTool {
     // 乘于聪
     public static String multiplySatoshi2str (String num) {
         if(StringUtils.isBlank(num)){
-            return 0L;
+            return STR_ZERO;
         }
         return new BigDecimal(num).multiply(SATOSHI).stripTrailingZeros().toPlainString();
     }

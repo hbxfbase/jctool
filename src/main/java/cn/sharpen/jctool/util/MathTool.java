@@ -428,6 +428,43 @@ public class MathTool {
         return bd.stripTrailingZeros().toPlainString();
     }
 
+    /**
+     * 小数对象相乘
+     * @param aa 被乘数
+     * @param bb 乘数
+     * @param roundingMode 圆整方式
+     * @return 积
+     */
+    public static String deciMultiply2str(int scale, Integer roundingMode,BigDecimal aa, BigDecimal bb ){
+        aa = aa == null ? BigDecimal.ZERO : aa ;
+        bb = bb == null ? BigDecimal.ZERO : bb ;
+
+        BigDecimal bd = aa.multiply(bb);
+        if(roundingMode!=null) {
+            bd = bd.setScale(scale, roundingMode);
+        }
+        return bd.stripTrailingZeros().toPlainString();
+    }
+
+    /**
+     * 多个小数对象相乘
+     * @param roundingMode 圆整方式
+     * @return 积
+     */
+    public static String deciManyMultiply2str(int scale, Integer roundingMode, BigDecimal ...num){
+        if(num == null) {
+            return STR_ZERO;
+        }
+        if(num.length<2) {
+            return num[0].stripTrailingZeros().toPlainString();
+        }
+
+        BigDecimal first = num[0];
+        for(int i=1, size = num.length; i< size; ++i ) {
+            first = first.multiply(num[i]);
+        }
+        return first.stripTrailingZeros().toPlainString();
+    }
 
     // 除法
     /**

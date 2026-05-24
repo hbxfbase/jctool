@@ -25,7 +25,7 @@ import static java.math.BigDecimal.*;
  * @author Justin
  */
 public class MathTool {
-
+    public static final BigDecimal SATOSHI = new BigDecimal(100000000);
     /**
      * 获取指定数目的随机数
      * @param rang 随机数范围

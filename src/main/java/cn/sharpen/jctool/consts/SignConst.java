@@ -38,6 +38,9 @@ public class SignConst {
     public static final String STR60 = "60";
     public static final String STR100 = "100";
     public static final String STR1800 = "1800";
+    public static final String STR_SATOSHI = "100000000"; // 聪
+    public static final String STR_NANOMETER = "1000000000"; // 纳米
+    public static final String STR_ANGSTROMS = "10000000000"; // 埃米
 
 
 
@@ -102,6 +105,7 @@ public class SignConst {
     public static final Long L10000 = 10000L;
     /** 十万 */
     public static final Long L_LAKH = 100000L;
+    public static final Long L_SATOSHI = 100000000L ; // 聪
 
     // 瑞波基准时间，单位：秒。参考： https://radarlab.org/dev-cn/radard-apis.html
     public static final Long RIPPLE_BASE_SECOND = 946684800L;

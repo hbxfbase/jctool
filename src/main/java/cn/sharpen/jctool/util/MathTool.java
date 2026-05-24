@@ -78,14 +78,27 @@ public class MathTool {
      * @return 乘于100万后的数字
      */
     public static long multiplyMilliLong(String num) {
-        if(StringUtils.isBlank(num)) {
-            num = STR_ZERO;
-        }
         if(StringUtils.isBlank(num)){
             return 0L;
         }
         return new BigDecimal(num).multiply(SignConst.BD_MILLI).longValue();
     }
+
+    // 乘于聪
+    public static long multiplySatoshi (String num) {
+        if(StringUtils.isBlank(num)){
+            return 0L;
+        }
+        return new BigDecimal(num).multiply(SATOSHI).longValue();
+    }
+    // 乘于聪
+    public static String multiplySatoshi2str (String num) {
+        if(StringUtils.isBlank(num)){
+            return 0L;
+        }
+        return new BigDecimal(num).multiply(SATOSHI).stripTrailingZeros().toPlainString();
+    }
+
 
     /**
      * 乘于100万并转成整数，保留6位小数

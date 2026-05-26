@@ -172,6 +172,17 @@ public class MathTool {
     }
 
     /**
+     * 删除数字字符串decimal后面的0
+     * @param num 数字字符串
+     * @return 没有尾部0的数字字符串
+     */
+    public static String numRemoveZero(String num){
+        if(StringUtils.isBlank(num)) {
+            return num;
+        }
+        return new BigDecimal(num).stripTrailingZeros().toPlainString();
+    }
+    /**
      * 求完全n叉数树的层数,从1开始
      * @param base 树的分支数
      * @param ordinal 节点编号,从1开始

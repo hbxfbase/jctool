@@ -99,6 +99,21 @@ public class MathTool {
         return new BigDecimal(num).multiply(SATOSHI).stripTrailingZeros().toPlainString();
     }
 
+    // 除以聪
+    public static long divideSatoshiDown18 (String num) {
+        if(StringUtils.isBlank(num)){
+            return 0L;
+        }
+        return new BigDecimal(num).divide(SATOSHI,18,RoundingMode.DOWN).longValue();
+    }
+    // 除以聪
+    public static String divideSatoshi2strDown18 (String num) {
+        if(StringUtils.isBlank(num)){
+            return STR_ZERO;
+        }
+        return new BigDecimal(num).divide(SATOSHI,18,RoundingMode.DOWN).stripTrailingZeros().toPlainString();
+    }
+
 
     /**
      * 乘于100万并转成整数，保留6位小数

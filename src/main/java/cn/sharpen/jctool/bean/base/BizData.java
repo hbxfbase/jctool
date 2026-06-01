@@ -68,7 +68,7 @@ public class BizData {
           "json:String;longtext:String;text:String;mediumtext:String;mediumtext:String;" +
           "timestamp:Date;datetime:Date;" +
           "tinyint:Integer;smallint:Integer;mediumint:Integer;int:Integer;integer:Integer;bigint:Long;" +
-          "decimal:String;";
+          "decimal:BigDecimal;";
   public static Map<String, String> dbJavaTypeMap = StrTool.str2map(DB_JAVA_TYPE_MAP, SymbolConst.SEMICOLON, COLON);
 
 

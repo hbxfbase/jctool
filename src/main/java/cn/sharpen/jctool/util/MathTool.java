@@ -65,6 +65,17 @@ public class MathTool {
      * @param numStr
      * @return
      */
+    public static BigDecimal instDeci(String numStr) {
+        if(!NumberUtil.isNumber(numStr)) {
+            return BigDecimal.ZERO;
+        }
+        return new BigDecimal(numStr);
+    }
+    /**
+     * 字符串数据转成int, 小数全部去掉
+     * @param numStr
+     * @return
+     */
     public static String num2IntDown(String numStr) {
         if(StringUtils.isBlank(numStr)) {
             return STR_ZERO;

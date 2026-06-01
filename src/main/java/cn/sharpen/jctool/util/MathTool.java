@@ -271,6 +271,11 @@ public class MathTool {
     }
     // 加法
 
+    public static BigDecimal deciAdd(BigDecimal aa , BigDecimal bb) {
+        aa = aa != null ? aa : BigDecimal.ZERO;
+        bb = bb != null ? bb : BigDecimal.ZERO;
+        return aa.add(bb);
+    }
     /**
      * 字符串相加。保留6位小数
      * @param aa 加数

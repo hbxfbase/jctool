@@ -271,11 +271,18 @@ public class MathTool {
     }
     // 加法
 
+    /**
+     * 小数相加
+     * @param aa 被加数
+     * @param bb 加数
+     * @return 相加的结果。如果为空，则默认为0
+     */
     public static BigDecimal deciAdd(BigDecimal aa , BigDecimal bb) {
         aa = aa != null ? aa : BigDecimal.ZERO;
         bb = bb != null ? bb : BigDecimal.ZERO;
         return aa.add(bb);
     }
+
     /**
      * 字符串相加。保留6位小数
      * @param aa 加数

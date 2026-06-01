@@ -169,10 +169,13 @@ public class MathTool {
      * @return 向下保留小数位后的数字的字符串形式
      */
     public static String downDecimal6(BigDecimal num) {
-        if(num == null) {
-            return STR_ZERO;
-        }
-        return num.setScale(6, RoundingMode.DOWN).stripTrailingZeros().toPlainString();
+        return downDecimal(num, 6);
+    }
+    public static String downDecimal8(BigDecimal num) {
+        return downDecimal(num, 8);
+    }
+    public static String downDecimal18(BigDecimal num) {
+        return downDecimal(num, 18);
     }
     /**
      * 向下保留小数位

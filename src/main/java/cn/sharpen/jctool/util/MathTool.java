@@ -163,6 +163,28 @@ public class MathTool {
         return new BigDecimal(num).setScale(decimal, ROUND_DOWN).stripTrailingZeros().toPlainString();
     }
 
+    /**
+     * 向下保留小数位
+     * @param num 数字
+     * @return 向下保留小数位后的数字的字符串形式
+     */
+    public static String downDecimal6(BigDecimal num) {
+        if(num == null) {
+            return STR_ZERO;
+        }
+        return num.setScale(6, RoundingMode.DOWN).stripTrailingZeros().toPlainString();
+    }
+    /**
+     * 向下保留小数位
+     * @param num 数字
+     * @return 向下保留小数位的字符串形式
+     */
+    public static String downDecimal(BigDecimal num, int decimal) {
+        if(num == null) {
+            return STR_ZERO;
+        }
+        return num.setScale(decimal, RoundingMode.DOWN ).stripTrailingZeros().toPlainString();
+    }
 
     /**
      * 求对数值

@@ -781,6 +781,12 @@ public class MathTool {
         }
         return new BigDecimal(aa).compareTo(new BigDecimal(STR_ZERO))>0;
     }
+    public static boolean greater0(BigDecimal aa){
+        if (aa == null) {
+            return false;
+        }
+        return aa.compareTo(BigDecimal.ZERO)>0;
+    }
     /**
      * 数字上是否大于等于
      * @param aa 比较数字

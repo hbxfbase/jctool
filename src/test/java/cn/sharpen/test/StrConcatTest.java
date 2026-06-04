@@ -223,8 +223,19 @@ public class StrConcatTest {
             String qrContent = QrCodeUtil.decode(file);
             StrTool.plf("parseQrTestTestStr=\n\n{}\n\n", qrContent);
         }catch (Exception e) {
-            log.info("parseQrTestFail {}", e.getMessage(), e);
+            StrTool.plf("parseQrTestFail {}", e.getMessage(), e);
         }
+    }
+
+    // 千分位，单元测试
+    @Test
+    public void thousandthTest() {
+        String num1= "12341203423134.12341234";
+        StrTool.plf("thousandthTest1Val={}", NumberUtil.decimalFormat(",###.######", new BigDecimal(num1)));
+        num1= "12341203423134.12";
+        StrTool.plf("thousandthTest2Val={}", NumberUtil.decimalFormat(",###.######", new BigDecimal(num1)));
+        num1= "12341203423134.";
+        StrTool.plf("thousandthTest3Val={}", NumberUtil.decimalFormat(",###.######", new BigDecimal(num1)));
     }
 
 

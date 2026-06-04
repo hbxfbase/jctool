@@ -125,6 +125,37 @@ public class MathTool {
         return new BigDecimal(num).divide(SATOSHI,18,RoundingMode.DOWN).stripTrailingZeros().toPlainString();
     }
 
+    // 字符串数字转换成千分位,最多保留6位小数，去掉末尾多余的0
+    public static String thousandthStr6(String num) {
+        if(StringUtils.isBlank(num) || !NumberUtil.isNumber(num)) {
+            return STR_ZERO;
+        }
+        return NumberUtil.decimalFormat(",###.######", new BigDecimal(num));
+    }
+    public static String thousandthStr5(String num) {
+        if(StringUtils.isBlank(num) || !NumberUtil.isNumber(num)) {
+            return STR_ZERO;
+        }
+        return NumberUtil.decimalFormat(",###.#####", new BigDecimal(num));
+    }
+    public static String thousandthStr4(String num) {
+        if(StringUtils.isBlank(num) || !NumberUtil.isNumber(num)) {
+            return STR_ZERO;
+        }
+        return NumberUtil.decimalFormat(",###.####", new BigDecimal(num));
+    }
+    public static String thousandthStr3(String num) {
+        if(StringUtils.isBlank(num) || !NumberUtil.isNumber(num)) {
+            return STR_ZERO;
+        }
+        return NumberUtil.decimalFormat(",###.###", new BigDecimal(num));
+    }
+    public static String thousandthStr2(String num) {
+        if(StringUtils.isBlank(num) || !NumberUtil.isNumber(num)) {
+            return STR_ZERO;
+        }
+        return NumberUtil.decimalFormat(",###.##", new BigDecimal(num));
+    }
 
     /**
      * 乘于100万并转成整数，保留6位小数

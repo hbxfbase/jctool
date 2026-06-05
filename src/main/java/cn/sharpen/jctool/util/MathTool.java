@@ -124,7 +124,21 @@ public class MathTool {
         }
         return new BigDecimal(num).divide(SATOSHI,18,RoundingMode.DOWN).stripTrailingZeros().toPlainString();
     }
-
+    // 字符串数字转换成千分位,最多保留8位小数，去掉末尾多余的0
+    public static String thousandthStr8(String num) {
+        return thousandthStr(num,8);
+    }
+    // 字符串数字转换成千分位,最多保留n位小数，去掉末尾多余的0
+    public static String thousandthStr(String num,int n) {
+        if(StringUtils.isBlank(num) || !NumberUtil.isNumber(num)) {
+            return STR_ZERO;
+        }
+        StringBuilder sb = new StringBuilder(",###.");
+        for (int i = 0; i < n; i++) {
+            sb.append("#");
+        }
+        return NumberUtil.decimalFormat(sb.toString(), new BigDecimal(num));
+    }
     // 字符串数字转换成千分位,最多保留6位小数，去掉末尾多余的0
     public static String thousandthStr6(String num) {
         if(StringUtils.isBlank(num) || !NumberUtil.isNumber(num)) {

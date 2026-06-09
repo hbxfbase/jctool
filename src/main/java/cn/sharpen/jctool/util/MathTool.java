@@ -686,12 +686,15 @@ public class MathTool {
      * @return 商
      */
     public static String strDivide(String aa, String bb, int scale, Integer roundingMode){
-        if(StringUtils.isBlank(aa)) {
+        if(StringUtils.isAnyBlank(aa,bb)) {
             return STR_ZERO;
         }
-        bb = StrTool.valNoBlank(bb, STR_ONE);
+        BigDecimal b = new BigDecimal(bb);
+        if(b.compareTo(BigDecimal.ZERO)==0){
+            return STR_ZERO;
+        }
         roundingMode = roundingMode == null ? BigDecimal.ROUND_DOWN : roundingMode;
-        BigDecimal bd = new BigDecimal(aa).divide(new BigDecimal(bb), scale, roundingMode);
+        BigDecimal bd = new BigDecimal(aa).divide(b, scale, roundingMode);
         return bd.stripTrailingZeros().toPlainString();
     }
 

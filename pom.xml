@@ -6,7 +6,7 @@
 
     <groupId>cn.sharpen</groupId>
     <artifactId>jctool</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>jctool</name>
     <description>sharpen生态下的java公共工具，依赖hutool,apache commons</description>
 
@@ -18,8 +18,10 @@
         <compile.version>8</compile.version>
         <junit.version>4.13.2</junit.version>
         <lombok.version>1.18.30</lombok.version>
+        <jackson.version>2.15.4</jackson.version>
+        <poi.version>5.2.5</poi.version>
+        <bouncycastle.version>1.78</bouncycastle.version>
     </properties>
-
 
     <dependencies>
         <!-- 全局单元测试 -->
@@ -29,7 +31,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -42,6 +43,7 @@
             <artifactId>cglib-nodep</artifactId>
             <version>3.3.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
@@ -51,66 +53,64 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.8.20</version>
+            <version>5.8.26</version>
         </dependency>
+
         <dependency>
-            <artifactId>forest-spring-boot-starter</artifactId>
             <groupId>com.dtflys.forest</groupId>
+            <artifactId>forest-spring-boot-starter</artifactId>
             <version>1.5.35</version>
         </dependency>
 
-
+        <!-- 安全加固版本 -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.13.3</version>
+            <version>${jackson.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>4.1.1</version>
+            <version>${poi.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-scripting</artifactId>
-            <version>2.1</version>
+            <version>2.3</version>
         </dependency>
 
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15to18</artifactId>
-            <version>1.71</version>
+            <artifactId>bcprov-jdk18on</artifactId>
+            <version>${bouncycastle.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.web3j</groupId>
             <artifactId>core</artifactId>
-            <!-- ribbon foil name item combine hockey refuse ladder unlock dry gasp spread
-            0xd6C1A1D4326435576d8617aF4aA6F9Ef18C55cc2 只有4.8.4才跟TP助记词生成钱包是一致的 -->
             <version>4.8.4</version>
         </dependency>
 
-        <!-- 核心依赖：谷歌 OAuth 验证库 -->
+        <!-- 谷歌 OAuth 验证库 -->
         <dependency>
             <groupId>com.google.api-client</groupId>
             <artifactId>google-api-client</artifactId>
-            <version>1.35.2</version> <!-- 推荐使用 1.35.x 及以上版本 -->
+            <version>2.2.0</version>
         </dependency>
-        <!-- 补充 OAuth2 相关工具类（包含 GoogleIdTokenVerifier） -->
         <dependency>
             <groupId>com.google.auth</groupId>
             <artifactId>google-auth-library-oauth2-http</artifactId>
-            <version>1.12.1</version>
+            <version>1.23.0</version>
         </dependency>
 
         <dependency>
-            <artifactId>commons-collections4</artifactId>
             <groupId>org.apache.commons</groupId>
-            <version>4.3</version>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
         </dependency>
-
     </dependencies>
-
 
     <build>
         <plugins>
@@ -139,10 +139,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-
-
         </plugins>
     </build>
-
 </project>
